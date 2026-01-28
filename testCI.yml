@@ -1,0 +1,41 @@
+name: CI y Despliegue a Github Pages
+
+
+on:
+  push:
+    branches: ["main", "frontend"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:  
+
+
+concurrency:
+  group: "CI-CD"
+  cancel-in-progress: true
+
+jobs:
+  verificar_codigo:
+    name: Verificar código
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar archivos (Opcional, para depuración)
+        run: ls -R
+        with:
+           
+      - name: Verificar archivos principales
+        run: |   
+          if [ ! -f "index.html" ]; then
+            echo "Error: index.html no encontrado!"
+            exit 1
+          fi
+          if [ ! -f "style.css" ]; then
+            echo "Error: style.css no encontrado!"
+            exit 1
+          fi
+          echo "Todos los archivos principales están presentes."
+
+       
