@@ -24,7 +24,7 @@ jobs:
 
       - name: Mostrar archivos (Opcional, para depuración)
         run: ls -R
-        with:
+        
            
       - name: Verificar archivos principales
         run: |   
