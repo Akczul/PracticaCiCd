@@ -32,8 +32,8 @@ jobs:
             echo "Error: index.html no encontrado!"
             exit 1
           fi
-          if [ ! -f "style.css" ]; then
-            echo "Error: style.css no encontrado!"
+          if [ ! -f "styles.css" ]; then
+            echo "Error: styles.css no encontrado!"
             exit 1
           fi
           echo "Todos los archivos principales están presentes."}
