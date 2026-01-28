@@ -36,6 +36,17 @@ jobs:
             echo "Error: style.css no encontrado!"
             exit 1
           fi
-          echo "Todos los archivos principales están presentes."
+          echo "Todos los archivos principales están presentes."}
 
-       
+      - name: Configurar Github Pages
+        uses: actions/configure-pages@v5
+
+        
+      - name: Subir artefactos de despliegue
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './'
+
+      - name: Iniciar despliegue a Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
