@@ -25,6 +25,7 @@ jobs:
       - name: Mostrar archivos (Opcional, para depuración)
         run: ls -R
         
+        
            
       - name: Verificar archivos principales
         run: |   
@@ -49,4 +50,4 @@ jobs:
 
       - name: Iniciar despliegue a Github Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v3
